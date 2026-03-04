@@ -1,0 +1,12 @@
+# prometheus/rules/alerts.yml
+groups:
+  - name: availability
+    rules:
+      - alert: InstanceDown
+        expr: up == 0
+        for: 15s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Instance {{ $labels.instance }} is down"
+          description: "{{ $labels.job }} on {{ $labels.instance }} has been unreachable for more than 15 seconds."

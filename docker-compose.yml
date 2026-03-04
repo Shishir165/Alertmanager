@@ -1,0 +1,43 @@
+# docker-compose.yml
+version: "3.8"
+
+services:
+
+  prometheus:
+    image: prom/prometheus:v2.51.0
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./prometheus/rules:/etc/prometheus/rules:ro
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.enable-lifecycle
+    depends_on:
+      - alertmanager
+
+  alertmanager:
+    image: prom/alertmanager:v0.27.0
+    container_name: alertmanager
+    ports:
+      - "9093:9093"
+    volumes:
+      - ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
+    command:
+      - --config.file=/etc/alertmanager/alertmanager.yml
+
+  fake-app:
+    image: prom/node-exporter:v1.7.0
+    container_name: fake-app
+    ports:
+      - "8080:9100"
+
+  webhook-sink:
+    image: mendhak/http-https-echo:33
+    container_name: webhook-sink
+    environment:
+      HTTP_PORT: "9999"
+    ports:
+      - "9999:9999"

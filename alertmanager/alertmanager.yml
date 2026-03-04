@@ -1,0 +1,23 @@
+# alertmanager/alertmanager.yml
+global:
+  resolve_timeout: 1m
+
+# This will group alarms (it technically sends alarms every 30s),
+# but since they're in the same group, they're only fired every hour.
+route:
+  group_by:
+    - alertname
+  group_wait: 10s
+  group_interval: 30s
+  repeat_interval: 1h
+  receiver: webhook-logger
+
+# The thing you're going to send your alarm to
+# An e-mail, Slack, etc (in this case it's our sink 💧)
+receivers:
+  - name: webhook-logger
+    webhook_configs:
+      - url: http://webhook-sink:9999/alert
+        send_resolved: true
+
+inhibit_rules: []
