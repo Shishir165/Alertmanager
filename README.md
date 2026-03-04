@@ -1,39 +1,64 @@
-Prometheus Monitoring Lab
+**Prometheus Monitoring Lab**
+
 Overview
 
-This project demonstrates a basic monitoring stack using Prometheus and Alertmanager running in Docker.
-It simulates application metrics, collects them with Prometheus, and triggers alerts that are sent to a webhook receiver.
+This project demonstrates a basic monitoring stack using Prometheus, Grafana, and Alertmanager running in Docker.
 
-The goal of this lab is to practice modern DevOps monitoring concepts such as metrics collection, alerting, and containerized observability setups.
+The stack collects system and application metrics, evaluates alert rules, and visualizes metrics through dashboards. Alerts are routed through Alertmanager and sent to a webhook receiver.
 
-Tech Stack
+This lab helps practice modern DevOps monitoring and observability concepts such as metrics collection, alerting pipelines, and containerized monitoring infrastructure.
 
-Prometheus (metrics collection)
+**Tech Stack**
 
-Alertmanager (alert routing and notification)
+Prometheus – Metrics collection and monitoring
 
-Node Exporter (system metrics)
+Grafana – Metrics visualization dashboards
 
-Docker & Docker Compose
+Alertmanager – Alert routing and notification management
 
-Webhook Sink (simulated alert receiver)
+Node Exporter – System metrics exporter
 
-Architecture
+Docker & Docker Compose – Container orchestration
 
-Application → Prometheus → Alertmanager → Webhook Receiver
+Webhook Sink – Simulated alert receiver
 
-Prometheus scrapes metrics from the application and exporters, evaluates alert rules, and sends alerts to Alertmanager which then forwards notifications.
+**Architecture**
 
-How to Run
+Application / VM
+⬇
+Node Exporter (metrics)
+⬇
+Prometheus (scrapes metrics & evaluates alerts)
+⬇
+Alertmanager (alert routing)
+⬇
+Webhook Receiver (notification endpoint)
+⬇
+Grafana (visualization dashboards)
+
+**Project Structure**
+prometheus-lab/
+│
+├── alertmanager/
+│   └── alertmanager.yml
+│
+├── prometheus/
+│   ├── prometheus.yml
+│   └── rules/
+│       └── alerts.yml
+│
+├── docker-compose.yml
+└── README.md
+**How to Run**
 
 Clone the repository and start the monitoring stack:
 
 docker compose up -d
 
-Check running services:
+Verify running services:
 
 docker compose ps
-Web Interfaces
+**Web Interfaces**
 
 Prometheus UI
 http://localhost:9090
@@ -41,20 +66,26 @@ http://localhost:9090
 Alertmanager UI
 http://localhost:9093
 
+Grafana Dashboard
+http://localhost:3000
+
 Webhook Sink (alert receiver)
 http://localhost:9999
 
-Learning Goals
+**Learning Goals**
 
 Understand Prometheus architecture
 
 Configure monitoring targets and alert rules
 
-Use Docker Compose to orchestrate monitoring services
+Deploy a containerized monitoring stack
 
-Troubleshoot container networking and port conflicts
+Visualize metrics with Grafana dashboards
+Implement alerting workflows using Alertmanager
 
-Author
+**Author**
+
 Shishir Pariyar
 
 DevOps / Cloud Engineering Learning Project
+
