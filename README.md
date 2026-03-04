@@ -1,3 +1,4 @@
+ HEAD
 **Prometheus Monitoring Lab**
 
 Overview
@@ -6,9 +7,29 @@ This project demonstrates a basic monitoring stack using Prometheus, Grafana, an
 
 The stack collects system and application metrics, evaluates alert rules, and visualizes metrics through dashboards. Alerts are routed through Alertmanager and sent to a webhook receiver.
 
+Prometheus & Grafana Monitoring Stack with Alertmanager
+
+Overview
+
+TThis project demonstrates a basic monitoring stack using Prometheus, Grafana, and Alertmanager running in Docker.
+
+The stack collects system and application metrics, evaluates alert rules, and visualizes metrics through dashboards. Alerts are routed through Alertmanager and sent to a webhook receiver.
+
+This lab helps practice modern DevOps monitoring and observability concepts such as metrics collection, alerting pipelines, and containerized monitoring infrastructure
+ d0e4a4c (Add screenshots to README)
+
 This lab helps practice modern DevOps monitoring and observability concepts such as metrics collection, alerting pipelines, and containerized monitoring infrastructure.
 
+ HEAD
 **Tech Stack**
+
+Prometheus – Metrics collection and monitoring
+
+Grafana – Metrics visualization dashboards
+
+Alertmanager – Alert routing and notification management
+
+Node Exporter – System metrics exporter
 
 Prometheus – Metrics collection and monitoring
 
@@ -20,6 +41,12 @@ Node Exporter – System metrics exporter
 
 Docker & Docker Compose – Container orchestration
 
+Webhook Sink – Simulated alert receiver
+ d0e4a4c (Add screenshots to README)
+
+Docker & Docker Compose – Container orchestration
+
+ HEAD
 Webhook Sink – Simulated alert receiver
 
 **Architecture**
@@ -37,6 +64,21 @@ Webhook Receiver (notification endpoint)
 Grafana (visualization dashboards)
 
 **Project Structure**
+
+Application / VM
+⬇
+Node Exporter (metrics)
+⬇
+Prometheus (scrapes metrics & evaluates alerts)
+⬇
+Alertmanager (alert routing)
+⬇
+Webhook Receiver (notification endpoint)
+⬇
+Grafana (visualization dashboards)
+
+Project Structure
+ d0e4a4c (Add screenshots to README)
 prometheus-lab/
 │
 ├── alertmanager/
@@ -49,7 +91,11 @@ prometheus-lab/
 │
 ├── docker-compose.yml
 └── README.md
+ HEAD
 **How to Run**
+
+How to Run
+ d0e4a4c (Add screenshots to README)
 
 Clone the repository and start the monitoring stack:
 
@@ -72,7 +118,25 @@ http://localhost:3000
 Webhook Sink (alert receiver)
 http://localhost:9999
 
+ HEAD
 **Learning Goals**
+
+Screenshots
+Prometheus Targets
+
+## Screenshots
+
+### Prometheus Targets
+![Prometheus Targets](screenshots/Targets.png)
+
+### Grafana Dashboard
+![Grafana Dashboard](screenshots/Grafana.png)
+
+### Alertmanager UI
+![Alertmanager UI](screenshots/Alert.png)
+
+Learning Goals
+d0e4a4c (Add screenshots to README)
 
 Understand Prometheus architecture
 
@@ -81,10 +145,17 @@ Configure monitoring targets and alert rules
 Deploy a containerized monitoring stack
 
 Visualize metrics with Grafana dashboards
+ HEAD
 Implement alerting workflows using Alertmanager
 
 **Author**
 
+
+
+Implement alerting workflows using Alertmanager
+
+Author
+ d0e4a4c (Add screenshots to README)
 Shishir Pariyar
 
 DevOps / Cloud Engineering Learning Project
