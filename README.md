@@ -148,14 +148,8 @@ Visualize metrics with Grafana dashboards
  HEAD
 Implement alerting workflows using Alertmanager
 
-**Author**
+**Author*
 
-
-
-Implement alerting workflows using Alertmanager
-
-Author
- d0e4a4c (Add screenshots to README)
 Shishir Pariyar
 
 DevOps / Cloud Engineering Learning Project
