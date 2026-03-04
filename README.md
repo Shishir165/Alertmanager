@@ -1,5 +1,5 @@
- HEAD
-**Prometheus Monitoring Lab**
+
+Prometheus & Grafana Monitoring Stack with Alertmanager
 
 Overview
 
@@ -7,20 +7,8 @@ This project demonstrates a basic monitoring stack using Prometheus, Grafana, an
 
 The stack collects system and application metrics, evaluates alert rules, and visualizes metrics through dashboards. Alerts are routed through Alertmanager and sent to a webhook receiver.
 
-Prometheus & Grafana Monitoring Stack with Alertmanager
-
-Overview
-
-TThis project demonstrates a basic monitoring stack using Prometheus, Grafana, and Alertmanager running in Docker.
-
-The stack collects system and application metrics, evaluates alert rules, and visualizes metrics through dashboards. Alerts are routed through Alertmanager and sent to a webhook receiver.
-
-This lab helps practice modern DevOps monitoring and observability concepts such as metrics collection, alerting pipelines, and containerized monitoring infrastructure
- d0e4a4c (Add screenshots to README)
-
 This lab helps practice modern DevOps monitoring and observability concepts such as metrics collection, alerting pipelines, and containerized monitoring infrastructure.
 
- HEAD
 **Tech Stack**
 
 Prometheus – Metrics collection and monitoring
