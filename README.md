@@ -6,22 +6,49 @@ This project demonstrates a monitoring stack using **Prometheus, Grafana, and Al
 
 The stack collects system and application metrics, evaluates alert rules, and visualizes metrics through dashboards. Alerts are routed through Alertmanager and sent to a webhook receiver.
 
-This lab helps practice modern **DevOps monitoring and observability concepts** such as metrics collection, alerting pipelines, and containerized monitoring infrastructure.
+Prometheus & Grafana Monitoring Stack with Alertmanager
 
----
+Overview
 
-## Tech Stack
+TThis project demonstrates a basic monitoring stack using Prometheus, Grafana, and Alertmanager running in Docker.
 
-- Prometheus – Metrics collection and monitoring  
-- Grafana – Metrics visualization dashboards  
-- Alertmanager – Alert routing and notification management  
-- Node Exporter – System metrics exporter  
-- Docker & Docker Compose – Container orchestration  
-- Webhook Sink – Simulated alert receiver  
+The stack collects system and application metrics, evaluates alert rules, and visualizes metrics through dashboards. Alerts are routed through Alertmanager and sent to a webhook receiver.
 
----
+This lab helps practice modern DevOps monitoring and observability concepts such as metrics collection, alerting pipelines, and containerized monitoring infrastructure
+ 
 
-## Architecture
+This lab helps practice modern DevOps monitoring and observability concepts such as metrics collection, alerting pipelines, and containerized monitoring infrastructure.
+
+
+**Tech Stack**
+
+Prometheus – Metrics collection and monitoring
+
+Grafana – Metrics visualization dashboards
+
+Alertmanager – Alert routing and notification management
+
+Node Exporter – System metrics exporter
+
+Prometheus – Metrics collection and monitoring
+
+Grafana – Metrics visualization dashboards
+
+Alertmanager – Alert routing and notification management
+
+Node Exporter – System metrics exporter
+
+Docker & Docker Compose – Container orchestration
+
+Webhook Sink – Simulated alert receiver
+ d0e4a4c (Add screenshots to README)
+
+Docker & Docker Compose – Container orchestration
+
+ HEAD
+Webhook Sink – Simulated alert receiver
+
+**Architecture**
 
 Application / VM  
 ↓  
